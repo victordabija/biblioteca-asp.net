@@ -10,6 +10,8 @@
                     <h3 class="card-title">
                         Books
                     </h3>
+
+                    <a asp-action="Create" class="btn btn-success">New</a>
                 </div>
 
                 <div class="card-body">
@@ -22,22 +24,21 @@
                             <th>EditYear</th>
                             <th>Actions</th>
                         </tr>
-                        
-                        <!-- Foreach book -->
+
                         @foreach (var book in Model)
                         {
-                        <tr>
-                            <td>@book.Id</td>
-                            <td>@book.Title</td>
-                            <td>@book.Author</td>
-                            <td>@book.PagesCount</td>
-                            <td>@book.EditYear</td>
-                            <td>
-                                <a asp-action="View" asp-route-id="@book.Id" class="btn btn-info">View</a>
-                                <a asp-action="Edit" asp-route-id="@book.Id" class="btn btn-primary">Edit</a>
-                                <a asp-action="Delete" asp-route-id="@book.Id" class="btn btn-danger">Delete</a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>@book.Id</td>
+                                <td>@book.Title</td>
+                                <td>@book.Author</td>
+                                <td>@book.PagesCount</td>
+                                <td>@book.EditYear</td>
+                                <td>
+                                    <a asp-action="View" asp-route-id="@book.Id" class="btn btn-info">View</a>
+                                    <a asp-action="Edit" asp-route-id="@book.Id" class="btn btn-primary">Edit</a>
+                                    <a asp-action="Delete" asp-route-id="@book.Id" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
                         }
                     </table>
                 </div>
